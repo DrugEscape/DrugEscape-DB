@@ -24,6 +24,7 @@ take_medician VARCHAR(255),
 report_id INTEGER,
 FOREIGN KEY(report_id) REFERENCES report(id)
 );
+
 CREATE TABLE donation (
 id  INTEGER PRIMARY KEY,
 donated_point INTEGER,
