@@ -20,7 +20,7 @@ CREATE TABLE management (
 id INTEGER PRIMARY KEY ,
 stop_drug VARCHAR(255),
 exercise VARCHAR(255),
-mael VARCHAR(255),
+meal VARCHAR(255),
 take_medician VARCHAR(255),
 report_id INTEGER,
 FOREIGN KEY(report_id) REFERENCES report(id)
