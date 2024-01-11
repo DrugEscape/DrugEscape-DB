@@ -27,6 +27,7 @@ FOREIGN KEY(report_id) REFERENCES report(id)
 
 CREATE TABLE donation (
 id  INTEGER PRIMARY KEY,
+donating_point INTEGER,
 donated_point INTEGER,
 report_id INTEGER,
 FOREIGN KEY(report_id) REFERENCES report(id));
