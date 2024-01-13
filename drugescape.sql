@@ -67,3 +67,4 @@ CREATE TABLE heart (
     FOREIGN KEY(memberId) REFERENCES member(id),
     FOREIGN KEY(boardId) REFERENCES board(id)
 );
+
