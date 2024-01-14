@@ -12,27 +12,27 @@ CREATE TABLE member (
 CREATE TABLE report (
     id BIGINT AUTO_INCREMENT PRIMARY KEY,
     point INT,
-    accumulatedDays INT,
-    maximumDays INT,
-    dailyGoals INT
+    accumulated_days INT,
+    maximum_days INT,
+    daily_goals INT
 );
 
 CREATE TABLE management (
     id BIGINT AUTO_INCREMENT PRIMARY KEY,
-    stopDrug VARCHAR(255),
+    stop_drug VARCHAR(255),
     exercise VARCHAR(255),
     meal VARCHAR(255),
     medication VARCHAR(255),
-    reportId BIGINT,
-    FOREIGN KEY(reportId) REFERENCES report(id)
+    report_id BIGINT,
+    FOREIGN KEY(report_id) REFERENCES report(id)
 );
 
 CREATE TABLE donation (
     id BIGINT AUTO_INCREMENT PRIMARY KEY,
-    donatingPoint INT,
-    donatedPoint INT,
-    reportId BIGINT,
-    FOREIGN KEY(reportId) REFERENCES report(id)
+    donating_point INT,
+    donated_point INT,
+    report_id BIGINT,
+    FOREIGN KEY(report_id) REFERENCES report(id)
 );
 
 CREATE TABLE board (
@@ -40,31 +40,30 @@ CREATE TABLE board (
     title VARCHAR(255),
     content VARCHAR(255),
     image VARCHAR(255),
-    likeCount INT,
-    viewCount INT,
-    commentCount INT,
-    createdAt datetime,
-    modifiedAt datetime,
-    memberId BIGINT,
-    FOREIGN KEY(memberId) REFERENCES member(id)
+    like_count INT,
+    view_count INT,
+    comment_count INT,
+    created_at datetime,
+    modified_at datetime,
+    member_id BIGINT,
+    FOREIGN KEY(member_id) REFERENCES member(id)
 );
 
 CREATE TABLE comment (
     id BIGINT AUTO_INCREMENT PRIMARY KEY,
     content VARCHAR(255),
-    createdAt datetime,
-    modifiedAt datetime,
-    memberId BIGINT,
-    boardId BIGINT,
-    FOREIGN KEY(memberId) REFERENCES member(id),
-    FOREIGN KEY(boardId) REFERENCES board(id)
+    created_at datetime,
+    modified_at datetime,
+    member_id BIGINT,
+    board_id BIGINT,
+    FOREIGN KEY(member_id) REFERENCES member(id),
+    FOREIGN KEY(board_id) REFERENCES board(id)
 );
 
 CREATE TABLE heart (
     id BIGINT AUTO_INCREMENT PRIMARY KEY,
-    memberId BIGINT,
-    boardId BIGINT,
-    FOREIGN KEY(memberId) REFERENCES member(id),
-    FOREIGN KEY(boardId) REFERENCES board(id)
+    member_id BIGINT,
+    board_id BIGINT,
+    FOREIGN KEY(member_id) REFERENCES member(id),
+    FOREIGN KEY(board_id) REFERENCES board(id)
 );
-
