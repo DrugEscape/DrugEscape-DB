@@ -14,7 +14,9 @@ CREATE TABLE report (
     point INT,
     accumulated_days INT,
     maximum_days INT,
-    daily_goals INT
+    daily_goals INT,
+    member_id BIGINT,
+    FOREIGN KEY(member_id) REFERENCES member(id)
 );
 
 CREATE TABLE management (
